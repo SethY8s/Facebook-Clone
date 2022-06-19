@@ -5,35 +5,31 @@ export default function Input() {
   const [user, setUser] = useState('');
   const [message, setMessage] = useState('');
 
-  const  postData = async () => {
+  const postData = async () => {
     console.log(`Hello ${user} message is: ${message}`);
-    setMessage('')
-    setUser('')
 
     const data = {
-      user,
-      message
-    }
+      userId: 1,
+      title: 'A new post',
+      body: 'This is the body of the new post'
+    };
 
-    console.log(data)
+    console.log(data);
 
-    // try {
-    //   const resp = await axios.post(
-    //     '',
-    //     // 'http://localhost:4000/create-checkout-session', POST, GET, DELETE, PUT
-    //     {
-    //       data,
-    //     }
-    //   );
-    //   console.log(resp);
+    axios.post('http://localhost:4000/data', data)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 
-    //   // const { url_ } = resp.data;
-   
-    // } catch (error) {
-    //   console.log(error);
-    // }
-   
+ 
 
+ 
+
+    setMessage('');
+    setUser('');
   };
 
   return (
