@@ -11,22 +11,19 @@ export default function Input() {
     const data = {
       userId: 1,
       title: 'A new post',
-      body: 'This is the body of the new post'
+      body: 'This is the body of the new post',
     };
 
     console.log(data);
 
-    axios.post('http://localhost:4000/data', data)
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
- 
-
- 
+    axios
+      .post('http://localhost:4000/data', data)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
     setMessage('');
     setUser('');
