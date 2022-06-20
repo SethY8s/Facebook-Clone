@@ -9,9 +9,8 @@ export default function Input() {
     console.log(`Hello ${user} message is: ${message}`);
 
     const data = {
-      userId: 1,
-      title: 'A new post',
-      body: 'This is the body of the new post',
+      user,
+      message,
     };
 
     console.log(data);
