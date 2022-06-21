@@ -3,19 +3,22 @@ import React, { useState } from 'react';
 export default function Message() {
   const [message, setMessage] = useState('j');
   const [messages, setMessages] = useState(['hello', 'there']);
-  const [userData, setUserData] = useState(
-    {
-      friends: { 
-        sarah : ["hey", "what's up?"],
-        blake: ["can I have your homework?"]
-      },
-  }
-  )
 
-  for(let friend:Array in userData.friends){
-    
-    console.log(userData.friends[friend])
+
+  const userData = {
+    friends: {
+      sarah: ['hey', "what's up?"],
+      blake: ['can I have your homework?', 'hello'],
+    },
+  };
+
+  // let friend:any[];
+
+  for (let friend in userData.friends) {
+    console.log(userData.friends[friend as keyof typeof userData.friends] );
   }
+
+  
 
   return (
     <div>
@@ -23,9 +26,6 @@ export default function Message() {
       {messages.map((el) => (
         <p key={el}>{el}</p>
       ))}
-
-       
-
     </div>
   );
 }
