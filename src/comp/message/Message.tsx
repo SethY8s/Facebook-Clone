@@ -1,31 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Message() {
-  const [message, setMessage] = useState('j');
-  const [messages, setMessages] = useState(['hello', 'there']);
+  const [messages, setMessages] = useState<any>([['hello'], ['there']]);
 
+  type TFriend = { [key: string]: string[] };
 
-  const userData = {
+  type TUserData = {
+    friends: TFriend;
+  };
+
+  const userData: TUserData = {
     friends: {
       sarah: ['hey', "what's up?"],
       blake: ['can I have your homework?', 'hello'],
+      man: ['can I have your homework?', 'hello'],
+      dan: ['can I have your homework?', 'helfe'],
     },
   };
 
-  // let friend:any[];
+  useEffect(() => {
+    let array = [];
 
-  for (let friend in userData.friends) {
-    console.log(userData.friends[friend as keyof typeof userData.friends] );
-  }
+    for (let friend in userData.friends) {
+      // console.log(userData.friends[friend]);
+      const arr = userData.friends[friend];
+      array.push(arr);
+    }
 
-  
+    setMessages([...messages, array]);
+
+    
+  }, []);
+
+  // for (let friend in userData.friends) {
+  //   // console.log(userData.friends[friend]);
+  //   const arr = userData.friends[friend]
+
+  // }
+
+  // as keyof typeof userData.friends
 
   return (
     <div>
       <h5>Messsage Go Here</h5>
-      {messages.map((el) => (
-        <p key={el}>{el}</p>
-      ))}
+      {messages.map((el: []) => el.map((el) => <p>{el}</p>))}
+      {messages}
     </div>
   );
 }
