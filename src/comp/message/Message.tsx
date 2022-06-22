@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 export default function Message() {
-  const [messages, setMessages] = useState<any>([['hello'], ['there']]);
+  const [messages, setMessages] = useState<any[]>([]);
 
   type TFriend = { [key: string]: string[] };
 
