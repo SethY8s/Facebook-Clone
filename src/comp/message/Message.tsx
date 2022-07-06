@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { connect } from 'react-redux'
 
-export default function Message() {
+function Message( {} ) {
   const [messages, setMessages] = useState<any[]>([]);
 
   type TFriend = { [key: string]: string[] };
@@ -51,6 +51,10 @@ export default function Message() {
   );
 }
 
-const mapStateToProps = state => {
-  
+const mapStateToProps = (state:any) => {
+  return {
+    friends: state.user.friends
+  }
 }
+
+export default connect(mapStateToProps)(Message)
