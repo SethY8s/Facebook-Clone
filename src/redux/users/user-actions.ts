@@ -1,6 +1,6 @@
 import * as actionTypes from './user-types';
 
-export const sendMessage = (itemMessage:any) => {
+export const sendMessage = (itemMessage: any) => {
   return {
     types: actionTypes.ADD_MESSAGE,
     payload: {
@@ -9,7 +9,7 @@ export const sendMessage = (itemMessage:any) => {
   };
 };
 
-export const addFriend = (friend:any) => {
+export const addFriend = (friend: any) => {
   return {
     types: actionTypes.ADD_FRIEND,
     payload: {
@@ -18,7 +18,7 @@ export const addFriend = (friend:any) => {
   };
 };
 
-export const deleteFriend = (friend:any) => {
+export const deleteFriend = (friend: any) => {
   return {
     types: actionTypes.DELETE_FRIEND,
     payload: {
@@ -27,7 +27,7 @@ export const deleteFriend = (friend:any) => {
   };
 };
 
-export const loadMessage = (friend:any) => {
+export const loadMessage = (friend: any) => {
   return {
     types: actionTypes.LOAD_MESSAGES,
     payload: {
