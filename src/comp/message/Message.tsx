@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { connect } from 'react-redux'
+
 export default function Message() {
   const [messages, setMessages] = useState<any[]>([]);
 
@@ -47,4 +49,8 @@ export default function Message() {
       {messages}
     </div>
   );
+}
+
+const mapStateToProps = state => {
+  
 }

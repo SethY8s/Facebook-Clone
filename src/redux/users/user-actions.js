@@ -1,1 +1,0 @@
-import * as actionTypes from './user-types';
