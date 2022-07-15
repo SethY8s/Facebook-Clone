@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import './sass/mixins';
+@import './sass/variables';
+
+@import './comp/homePage/home';
