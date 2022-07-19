@@ -1,18 +1,24 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
-// import './_navbar.scss'
+import { useAuth } from '../../context/AuthContext'
+
+import './_navbar.scss'
 
 export default function NavbarComp() {
+
+  const { currentUser } = useAuth();
+
+
   return (
     <Navbar bg="light" expand="lg">
-    
       <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
+          <Nav.Link href="#home">Messenger</Nav.Link>
+          {currentUser ? <Link to='/login'>Login</Link> : <Link to='/login'>LogIn</Link>}
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
@@ -26,7 +32,6 @@ export default function NavbarComp() {
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
-    
-  </Navbar>
+    </Navbar>
   );
 }
