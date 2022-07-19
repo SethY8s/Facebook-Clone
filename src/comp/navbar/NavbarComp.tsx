@@ -8,8 +8,9 @@ import './_navbar.scss'
 
 export default function NavbarComp() {
 
-  const { currentUser } = useAuth();
+  const { currentUser, logout } = useAuth();
 
+  
 
   return (
     <Navbar bg="light" expand="lg">
@@ -17,8 +18,8 @@ export default function NavbarComp() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#home">Messenger</Nav.Link>
-          {currentUser ? <Link to='/login'>Login</Link> : <Link to='/login'>LogIn</Link>}
+          {currentUser ? <Link to='/message' >Messenger</Link> : <Link to='/login'>Messenger</Link>}
+          {currentUser ? <Link to='/' onClick={logout} >LogOut</Link> : <Link to='/login'>LogIn</Link>}
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
