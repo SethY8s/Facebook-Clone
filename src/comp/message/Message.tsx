@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { connect } from 'react-redux';
 
-function Message({}) {
+function Message() {
   const [messages, setMessages] = useState<any[]>([]);
 
   type TFriend = { [key: string]: string[] };
