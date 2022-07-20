@@ -5,7 +5,7 @@ const photo = require('../../../images/photo.jpg');
 export default function Sidebar() {
   return (
     <div id="sidebar">
-      <div className='d-flex flex-column'>
+      <div className="d-flex flex-column">
         <div className="d-flex">
           <img className="w-25" src={photo} alt="friend" />
           <span>
