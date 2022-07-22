@@ -1,8 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './_sidebar.scss';
 const photo = require('../../../images/photo.jpg');
 
-export default function Sidebar() {
+function Sidebar( {friends} ) {
+
+  console.log(friends)
+
   return (
     <div id="sidebar">
       <div className="d-flex flex-column">
@@ -24,3 +28,8 @@ export default function Sidebar() {
     </div>
   );
 }
+
+
+export default connect(state => ({
+  friends: state.user.friends,
+}))(Sidebar)
