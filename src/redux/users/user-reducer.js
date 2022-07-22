@@ -1,7 +1,14 @@
 import * as actionTypes from './user-types';
 
 const INITIAL_STATE = {
-  friends: {},
+  friends: [
+    {
+      id: 1,
+      name: 'Amy',
+      friendMessage: ['Hey Seth', 'How Are you?'],
+      myMessage: ['Hey Amy', 'Good, Thanks'],
+    },
+  ],
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
