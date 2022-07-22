@@ -1,5 +1,16 @@
 #sidebar {
-    width: 275px;
-    height: 100vh;
-    background-color: green;
+  width: 275px;
+  height: 100vh;
+  background-color: green;
+
+  .message-friends {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: cyan;
+
+    &:hover {
+      width: 100%;
+      cursor: pointer;
+    }
+  }
 }
