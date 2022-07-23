@@ -7,10 +7,12 @@
     margin-top: 1rem;
     width: 100%;
     background-color: cyan;
+    transition: background-color .5s;
 
     &:hover {
       width: 100%;
       cursor: pointer;
+      background-color: aquamarine;
     }
   }
 }
