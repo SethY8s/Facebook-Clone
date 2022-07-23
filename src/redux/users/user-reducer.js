@@ -8,6 +8,18 @@ const INITIAL_STATE = {
       friendMessage: ['Hey Seth', 'How Are you?'],
       myMessage: ['Hey Amy', 'Good, Thanks'],
     },
+    {
+      id: 2,
+      name: 'Marco',
+      friendMessage: ['Dude how did you do on that test?', 'Really I bombed it'],
+      myMessage: ['I did well', 'That sucks man'],
+    },
+    {
+      id: 3,
+      name: 'Prem',
+      friendMessage: ['yoy', 'love u more'],
+      myMessage: ['love chu', 'gn babe'],
+    },
   ],
 };
 
