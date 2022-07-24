@@ -2,35 +2,47 @@ import React, { useState, useEffect } from 'react';
 
 import { connect } from 'react-redux';
 
-function Message() {
-  const [messages, setMessages] = useState<any[]>([]);
+interface friendsType {
+  id: number;
+  name: string;
+  friendMessage: string[];
+  myMessage: string[];
+}
 
-  type TFriend = { [key: string]: string[] };
+type friendProps = {
+  // friends: any[];
+  friends: friendsType[];
+};
 
-  type TUserData = {
-    friends: TFriend;
-  };
+const Message: React.FunctionComponent<friendProps> = ({ friends }) => {
+  // const [messages, setMessages] = useState<any[]>([]);
 
-  const userData: TUserData = {
-    friends: {
-      sarah: ['hey', "what's up?"],
-      blake: ['can I have your homework?', 'hello'],
-      man: ['can I have your homework?', 'hello'],
-      dan: ['can I have your homework?', 'helfe'],
-    },
-  };
+  // type TFriend = { [key: string]: string[] };
 
-  useEffect(() => {
-    let array = [];
+  // type TUserData = {
+  //   friends: TFriend;
+  // };
 
-    for (let friend in userData.friends) {
-      // console.log(userData.friends[friend]);
-      const arr = userData.friends[friend];
-      array.push(arr);
-    }
+  // const userData: TUserData = {
+  //   friends: {
+  //     sarah: ['hey', "what's up?"],
+  //     blake: ['can I have your homework?', 'hello'],
+  //     man: ['can I have your homework?', 'hello'],
+  //     dan: ['can I have your homework?', 'helfe'],
+  //   },
+  // };
 
-    setMessages([...messages, array]);
-  }, []);
+  // useEffect(() => {
+  //   let array = [];
+
+  //   for (let friend in userData.friends) {
+  //     // console.log(userData.friends[friend]);
+  //     const arr = userData.friends[friend];
+  //     array.push(arr);
+  //   }
+
+  //   setMessages([...messages, array]);
+  // }, []);
 
   // for (let friend in userData.friends) {
   //   // console.log(userData.friends[friend]);
@@ -43,16 +55,12 @@ function Message() {
   return (
     <div>
       <h5>Messsage Go Here</h5>
-      {messages.map((el: []) => el.map((el) => <p>{el}</p>))}
-      {messages}
+      {friends[0].myMessage}
     </div>
   );
-}
-
-const mapStateToProps = (state: any) => {
-  return {
-    friends: state.user.friends,
-  };
 };
 
-export default connect(mapStateToProps)(Message);
+
+export default connect((state: any) => ({
+  friends: state.user.friends,
+}))(Message);

@@ -11,7 +11,10 @@ const INITIAL_STATE = {
     {
       id: 2,
       name: 'Marco',
-      friendMessage: ['Dude how did you do on that test?', 'Really I bombed it'],
+      friendMessage: [
+        'Dude how did you do on that test?',
+        'Really I bombed it',
+      ],
       myMessage: ['I did well', 'That sucks man'],
     },
     {
@@ -21,6 +24,7 @@ const INITIAL_STATE = {
       myMessage: ['love chu', 'gn babe'],
     },
   ],
+  currentFriend: [],
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
