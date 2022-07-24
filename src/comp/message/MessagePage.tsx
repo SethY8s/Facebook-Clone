@@ -6,18 +6,17 @@ import Sidebar from './sidebar/Sidebar';
 export default function MessagePage() {
   return (
     <>
-    <div className='d-flex'>
-    <div>
-      <Sidebar />
-    </div>
-    <div>
-      <h2>This is the message page</h2>
-      
-      <Message />
-      <Input />
-    
-    </div>
-    </div>
+      <div className="d-flex">
+        <div>
+          <Sidebar />
+        </div>
+        <div>
+          <h2>This is the message page</h2>
+
+          <Message />
+          <Input />
+        </div>
+      </div>
     </>
   );
 }

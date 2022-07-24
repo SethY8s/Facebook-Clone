@@ -11,7 +11,6 @@ interface friendsType {
 }
 
 type friendProps = {
-  // friends: any[];
   friends: friendsType[];
 };
 

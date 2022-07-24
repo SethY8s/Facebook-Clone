@@ -1,6 +1,13 @@
 import React from 'react'
 const photo = require('../../../images/photo.jpg');
 
+// interface friendsType {
+//   id: number;
+//   name: string;
+//   friendMessage: string;
+//   myMessage: string;
+// }
+
 const SidebarUser = ( {friend} ) => {
   
         return (
