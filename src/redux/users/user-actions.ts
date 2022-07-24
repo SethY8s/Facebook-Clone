@@ -27,9 +27,9 @@ export const deleteFriend = (friend: any) => {
   };
 };
 
-export const loadMessage = (friend: any) => {
+export const loadUser = (friend: any) => {
   return {
-    types: actionTypes.LOAD_MESSAGES,
+    types: actionTypes.LOAD_USER,
     payload: {
       id: friend,
     },

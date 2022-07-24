@@ -35,8 +35,11 @@ const userReducer = (state = INITIAL_STATE, action) => {
       return {};
     case actionTypes.DELETE_FRIEND:
       return {};
-    case actionTypes.LOAD_MESSAGES:
-      return {};
+    case actionTypes.LOAD_USER:
+      return {
+        ...state,
+        currentFriend: action.payload,
+      };
     default:
       return state;
   }
