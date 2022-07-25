@@ -29,12 +29,12 @@ const INITIAL_STATE = {
 
 const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case actionTypes.ADD_FRIEND:
-      return {};
-    case actionTypes.ADD_MESSAGE:
-      return {};
-    case actionTypes.DELETE_FRIEND:
-      return {};
+    // case actionTypes.ADD_FRIEND:
+    //   return {};
+    // case actionTypes.ADD_MESSAGE:
+    //   return {};
+    // case actionTypes.DELETE_FRIEND:
+    //   return {};
     case actionTypes.LOAD_USER:
       return {
         ...state,
