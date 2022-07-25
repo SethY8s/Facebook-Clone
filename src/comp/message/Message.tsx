@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { connect } from 'react-redux';
 
@@ -11,56 +11,18 @@ interface friendsType {
 
 type friendProps = {
   // friends: any[];
-  friends: friendsType[];
+  currentFriend: friendsType;
 };
 
-const Message: React.FunctionComponent<friendProps> = ({ friends }) => {
-  // const [messages, setMessages] = useState<any[]>([]);
-
-  // type TFriend = { [key: string]: string[] };
-
-  // type TUserData = {
-  //   friends: TFriend;
-  // };
-
-  // const userData: TUserData = {
-  //   friends: {
-  //     sarah: ['hey', "what's up?"],
-  //     blake: ['can I have your homework?', 'hello'],
-  //     man: ['can I have your homework?', 'hello'],
-  //     dan: ['can I have your homework?', 'helfe'],
-  //   },
-  // };
-
-  // useEffect(() => {
-  //   let array = [];
-
-  //   for (let friend in userData.friends) {
-  //     // console.log(userData.friends[friend]);
-  //     const arr = userData.friends[friend];
-  //     array.push(arr);
-  //   }
-
-  //   setMessages([...messages, array]);
-  // }, []);
-
-  // for (let friend in userData.friends) {
-  //   // console.log(userData.friends[friend]);
-  //   const arr = userData.friends[friend]
-
-  // }
-
-  // as keyof typeof userData.friends
-
+const Message: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
   return (
     <div>
       <h5>Messsage Go Here</h5>
-      {friends[0].myMessage}
+      {currentFriend.name}
     </div>
   );
 };
 
-
 export default connect((state: any) => ({
-  friends: state.user.friends,
+  currentFriend: state.user.currentFriend,
 }))(Message);
