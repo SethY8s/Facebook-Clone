@@ -10,15 +10,15 @@ interface friendsType {
 }
 
 type friendProps = {
-  // friends: any[];
   currentFriend: friendsType;
 };
 
 const Message: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
   return (
-    <div>
-      <h5>Messsage Go Here</h5>
-      {currentFriend.name}
+    <div className="w-75 d-flex flex-column">
+      <h2>Messenger</h2>
+      <h5>{currentFriend.name}</h5>
+      
     </div>
   );
 };
