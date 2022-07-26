@@ -24,12 +24,12 @@ const INITIAL_STATE = {
       myMessage: ['love chu', 'gn babe'],
     },
   ],
-  currentFriend: [{
+  currentFriend: {
     id: 3,
     name: 'Prem',
     friendMessage: ['yoy', 'love u more'],
     myMessage: ['love chu', 'gn babe'],
-  }],
+  },
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {

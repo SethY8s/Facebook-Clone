@@ -18,7 +18,7 @@ const Message: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
     <div className="w-75 d-flex flex-column">
       <h2>Messenger</h2>
       <h5>{currentFriend.name}</h5>
-      
+      {currentFriend.friendMessage.map(el=> <p>{el}</p>)}
     </div>
   );
 };
