@@ -28,8 +28,6 @@ export default function Input() {
     setUser('');
   };
 
-
-  
   return (
     <div>
       <input
