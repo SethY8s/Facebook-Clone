@@ -12,7 +12,6 @@ export default function MessagePage() {
         </div>
         <div>
           <h2>This is the message page</h2>
-
           <Message />
           <Input />
         </div>
