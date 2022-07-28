@@ -7,6 +7,7 @@ interface friendsType {
   name: string;
   friendMessage: string[];
   myMessage: string[];
+  messages: string[];
 }
 
 type friendProps = {
@@ -18,9 +19,15 @@ const Message: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
     <div className="w-75 d-flex flex-column">
       <h2>Messenger</h2>
       <h5>{currentFriend.name}</h5>
-      {currentFriend.friendMessage.map((el) => (
-        <p>{el}</p>
-      ))}
+      {currentFriend.messages.map((el) => {
+        const [a, b] = el;
+
+        if (b === 'friend') {
+          return <p className="friend_message">{a}</p>;
+        } else {
+          return <p className="my_message">{a}</p>;
+        }
+      })}
     </div>
   );
 };

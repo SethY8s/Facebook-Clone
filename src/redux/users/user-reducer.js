@@ -29,6 +29,7 @@ const INITIAL_STATE = {
     name: 'Prem',
     friendMessage: ['yoy', 'love u more'],
     myMessage: ['love chu', 'gn babe'],
+    messages:[['yoy', 'friend'], ['love chu', 'me'], ['gn babe', 'me'], ['love u more', 'friend']]
   },
 };
 
