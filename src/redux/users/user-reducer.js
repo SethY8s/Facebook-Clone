@@ -4,32 +4,48 @@ const INITIAL_STATE = {
   friends: [
     {
       id: 1,
-      name: 'Amy',
-      friendMessage: ['Hey Seth', 'How Are you?'],
-      myMessage: ['Hey Amy', 'Good, Thanks'],
+      name: 'Brayden',
+
+      messages: [
+        ['Hey Seth', 'friend'],
+        ['I havent seen you in forever', 'friend'],
+        ['There is a party at my house if you want to come', 'friend'],
+        ['ok, yeah I will be there.', 'me'],
+      ],
     },
     {
       id: 2,
       name: 'Marco',
-      friendMessage: [
-        'Dude how did you do on that test?',
-        'Really I bombed it',
+
+      messages: [
+        ['Dude how did you do on that test?', 'friend'],
+        ['I did well', 'me'],
+        ['Really I bombed it', 'friend'],
+        ['dude that sucks', 'me'],
       ],
-      myMessage: ['I did well', 'That sucks man'],
     },
     {
       id: 3,
       name: 'Prem',
-      friendMessage: ['yoy', 'love u more'],
-      myMessage: ['love chu', 'gn babe'],
+
+      messages: [
+        ['yoy', 'friend'],
+        ['love chu', 'me'],
+        ['gn babe', 'me'],
+        ['love u more', 'friend'],
+      ],
     },
   ],
   currentFriend: {
     id: 3,
     name: 'Prem',
-    friendMessage: ['yoy', 'love u more'],
-    myMessage: ['love chu', 'gn babe'],
-    messages:[['yoy', 'friend'], ['love chu', 'me'], ['gn babe', 'me'], ['love u more', 'friend']]
+
+    messages: [
+      ['yoy', 'friend'],
+      ['love chu', 'me'],
+      ['gn babe', 'me'],
+      ['love u more', 'friend'],
+    ],
   },
 };
 

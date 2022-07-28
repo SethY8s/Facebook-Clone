@@ -9,6 +9,7 @@ interface friendsType {
   name: string;
   friendMessage: string;
   myMessage: string;
+  messages: string[];
 }
 
 type friendProps = {

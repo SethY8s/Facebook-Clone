@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 interface friendsType {
   id: number;
   name: string;
-  friendMessage: string[];
-  myMessage: string[];
+  
   messages: string[];
 }
 
@@ -23,9 +22,9 @@ const Message: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
         const [a, b] = el;
 
         if (b === 'friend') {
-          return <p className="friend_message">{a}</p>;
+          return <p className="">{a}</p>;
         } else {
-          return <p className="my_message">{a}</p>;
+          return <p className="d-flex justify-content-end">{a}</p>;
         }
       })}
     </div>

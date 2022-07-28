@@ -19,7 +19,7 @@ const SidebarUser = ({ friend, loadUser }) => {
       <img className="w-25" src={photo} alt="friend" />
       <span>
         <h6>{friend.name}</h6>
-        <p>{friend.friendMessage[friend.friendMessage.length - 1]}</p>
+        <p>{friend.messages[friend.messages.length - 1][0]}</p>
       </span>
     </div>
   );
