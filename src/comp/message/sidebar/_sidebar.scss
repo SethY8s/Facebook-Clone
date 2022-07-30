@@ -1,18 +1,18 @@
 #sidebar {
   width: 328px;
   height: 100vh;
-  background-color: green;
+  background-color: grey;
 
   .message-friends {
     margin-top: 1rem;
     width: 100%;
-    background-color: cyan;
+    background-color: lightgray;
     transition: background-color .5s;
 
     &:hover {
       width: 100%;
       cursor: pointer;
-      background-color: aquamarine;
+      background-color: lightcyan;
     }
   }
 }

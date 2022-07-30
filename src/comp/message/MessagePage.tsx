@@ -10,7 +10,7 @@ export default function MessagePage() {
         <div>
           <Sidebar />
         </div>
-        <div className='w-100'>
+        <div className='ms-3 w-100'>
           <h2>This is the message page</h2>
           <Message />
           {/* <Input /> */}

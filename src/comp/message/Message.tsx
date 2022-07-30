@@ -16,7 +16,7 @@ type friendProps = {
 
 const Message: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
   return (
-    <div className="w-75 d-flex flex-column">
+    <div className=" w-100 d-flex flex-column">
       <h2>Messenger</h2>
       <h5>{currentFriend.name}</h5>
       {currentFriend.messages.map((el) => {
@@ -25,7 +25,7 @@ const Message: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
         if (b === 'friend') {
           return <p className="">{a}</p>;
         } else {
-          return <p className="d-flex justify-content-end">{a}</p>;
+          return <p className="me-4 d-flex justify-content-end">{a}</p>;
         }
       })}
       <Input/>
