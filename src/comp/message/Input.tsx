@@ -56,14 +56,14 @@ const Input: React.FunctionComponent<friendProps> = ({
         type="text"
       />
       {/* <button onClick={() => postData()}>Send Me</button> */}
-      <button onClick={() => sendMessage(currentFriend)}>Send Me</button>
+      <button onClick={() => sendMessage(currentFriend, message)}>Send Me</button>
     </div>
   );
 };
 
 const mapStateToProps = (dispatch: any) => {
   return {
-    sendMessage: (currentFriend: any) => dispatch(sendMessage(currentFriend)),
+    sendMessage: (currentFriend: any, message:any) => dispatch(sendMessage(currentFriend, message)),
   };
 };
 

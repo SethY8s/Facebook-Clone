@@ -56,7 +56,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
     case actionTypes.ADD_MESSAGE:
       return {
         ...state,
-      friends: action.payload,
+      friends: action.payload.message,
     };
       // case actionTypes.DELETE_FRIEND:
       //   return {};
