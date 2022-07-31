@@ -1,12 +1,11 @@
 import * as actionTypes from './user-types';
 
-export const sendMessage = (message, currentFriend) => {
+
+
+export const sendMessage = (currentFriend) => {
   return {
-    types: actionTypes.ADD_MESSAGE,
-    payload: {
-      message: message,
-      currentFriend: currentFriend,
-    },
+    type: actionTypes.ADD_MESSAGE,
+    payload: currentFriend,
   };
 };
 

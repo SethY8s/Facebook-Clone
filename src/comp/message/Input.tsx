@@ -18,8 +18,9 @@ const Input: React.FunctionComponent<friendProps> = ({
   currentFriend,
   sendMessage,
 }) => {
-  const [user, setUser] = useState('');
   const [message, setMessage] = useState('');
+
+  console.log(currentFriend);
 
   // const postData = async () => {
   //   console.log(`Hello ${user} message is: ${message}`);
@@ -48,30 +49,21 @@ const Input: React.FunctionComponent<friendProps> = ({
     <div>
       <input
         onChange={(e) => {
-          setUser(e.target.value);
-        }}
-        placeholder="user"
-        value={user}
-        type="text"
-      />
-      <input
-        onChange={(e) => {
           setMessage(e.target.value);
         }}
         placeholder="message"
-        value={message}
+        // value={message}
         type="text"
       />
       {/* <button onClick={() => postData()}>Send Me</button> */}
-      <button onClick={() => sendMessage('hello', currentFriend)}>Send Me</button>
+      <button onClick={() => sendMessage(currentFriend)}>Send Me</button>
     </div>
   );
 };
 
 const mapStateToProps = (dispatch: any) => {
   return {
-    sendMessage: (newMessage: any, friend: any) =>
-      dispatch(sendMessage(newMessage, friend)),
+    sendMessage: (currentFriend: any) => dispatch(sendMessage(currentFriend)),
   };
 };
 
