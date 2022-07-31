@@ -4,8 +4,8 @@ export const sendMessage = (newMessage, currentFriend) => {
   return {
     types: actionTypes.ADD_MESSAGE,
     payload: {
-      id: newMessage,
-      friend: currentFriend,
+      message: newMessage,
+      currentFriend: currentFriend,
     },
   };
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from './Input';
+// import Input from './Input';
 
 import { connect } from 'react-redux';
 
@@ -28,7 +28,7 @@ const Message: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
           return <p className="me-4 d-flex justify-content-end">{a}</p>;
         }
       })}
-      <Input/>
+      {/* <Input/> */}
     </div>
     
   );

@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
-export default function Input() {
+interface friendsType {
+  id: number;
+  name: string;
+  messages: string[];
+}
+
+type friendProps = {
+  currentFriend: friendsType;
+};
+
+const Input: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
   const [user, setUser] = useState('');
   const [message, setMessage] = useState('');
 
@@ -49,4 +60,8 @@ export default function Input() {
       <button onClick={() => postData()}>Send Me</button>
     </div>
   );
-}
+};
+
+export default connect((state: any) => ({
+  currentFriend: state.user.currentFriend,
+}))(Input);
