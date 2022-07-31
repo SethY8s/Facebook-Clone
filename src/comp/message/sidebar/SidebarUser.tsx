@@ -3,14 +3,16 @@ import { connect } from 'react-redux';
 import { loadUser } from '../../../redux/users/user-actions';
 const photo = require('../../../images/photo.jpg');
 
-// interface friendsType {
-//   id: number;
-//   name: string;
-//   friendMessage: string;
-//   myMessage: string;
-// }
+interface friendsType {
+  friend: {
+    id: number;
+    name: string;
+    messages: string[];
+  };
+  loadUser: any;
+}
 
-const SidebarUser = ({ friend, loadUser }) => {
+const SidebarUser = ({ friend, loadUser }: friendsType) => {
   return (
     <div
       onClick={() => loadUser(friend)}
@@ -25,9 +27,9 @@ const SidebarUser = ({ friend, loadUser }) => {
   );
 };
 
-const mapStateToProps = (dispatch) => {
+const mapStateToProps = (dispatch: any) => {
   return {
-    loadUser: (friend) => dispatch(loadUser(friend)),
+    loadUser: (friend: any) => dispatch(loadUser(friend)),
   };
 };
 

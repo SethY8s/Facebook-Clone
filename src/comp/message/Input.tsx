@@ -62,6 +62,7 @@ const Input: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
   );
 };
 
+
 export default connect((state: any) => ({
   currentFriend: state.user.currentFriend,
 }))(Input);
