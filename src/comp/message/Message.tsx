@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 // import Input from './Input';
 
 import { connect } from 'react-redux';
@@ -15,6 +15,11 @@ type friendProps = {
 };
 
 const Message: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
+
+useEffect(()=> {
+
+},[currentFriend])
+
   return (
     <div className=" w-100 d-flex flex-column">
       <h2>Messenger</h2>
