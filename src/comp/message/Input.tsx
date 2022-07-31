@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
+// import axios from 'axios';
+import { sendMessage } from '../../redux/users/user-actions';
 
 interface friendsType {
   id: number;
@@ -10,34 +11,38 @@ interface friendsType {
 
 type friendProps = {
   currentFriend: friendsType;
+  sendMessage: any;
 };
 
-const Input: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
+const Input: React.FunctionComponent<friendProps> = ({
+  currentFriend,
+  sendMessage,
+}) => {
   const [user, setUser] = useState('');
   const [message, setMessage] = useState('');
 
-  const postData = async () => {
-    console.log(`Hello ${user} message is: ${message}`);
+  // const postData = async () => {
+  //   console.log(`Hello ${user} message is: ${message}`);
 
-    const data = {
-      user,
-      message,
-    };
+  //   const data = {
+  //     user,
+  //     message,
+  //   };
 
-    console.log(data);
+  //   console.log(data);
 
-    axios
-      .post('http://localhost:4000/data', data)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  //   axios
+  //     .post('http://localhost:4000/data', data)
+  //     .then(function (response) {
+  //       console.log(response);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
 
-    setMessage('');
-    setUser('');
-  };
+  //   setMessage('');
+  //   setUser('');
+  // };
 
   return (
     <div>
@@ -57,12 +62,22 @@ const Input: React.FunctionComponent<friendProps> = ({ currentFriend }) => {
         value={message}
         type="text"
       />
-      <button onClick={() => postData()}>Send Me</button>
+      {/* <button onClick={() => postData()}>Send Me</button> */}
+      <button onClick={() => sendMessage('hello', currentFriend)}>Send Me</button>
     </div>
   );
 };
 
+const mapStateToProps = (dispatch: any) => {
+  return {
+    sendMessage: (newMessage: any, friend: any) =>
+      dispatch(sendMessage(newMessage, friend)),
+  };
+};
 
-export default connect((state: any) => ({
-  currentFriend: state.user.currentFriend,
-}))(Input);
+export default connect(
+  (state: any) => ({
+    currentFriend: state.user.currentFriend,
+  }),
+  mapStateToProps
+)(Input);
