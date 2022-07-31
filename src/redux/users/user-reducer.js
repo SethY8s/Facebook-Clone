@@ -54,24 +54,25 @@ const userReducer = (state = INITIAL_STATE, action) => {
     // case actionTypes.ADD_FRIEND:
     //   return {};
     case actionTypes.ADD_MESSAGE:
+
+      let updatedFriends = [];
+      for(let friend of state.friends){
+        if(friend.id === action.payload.currentFriend.id) {
+           friend = {...friend, messages: [...friend.messages, [action.payload.message, 'me']]}
+        }
+        updatedFriends.push(friend)
+      }
+
       return {
         ...state,
-      friends: action.payload.message,
-    };
-      // case actionTypes.DELETE_FRIEND:
-      //   return {};
+        friends: updatedFriends,
+      };
+    // case actionTypes.DELETE_FRIEND:
+    //   return {};
 
-      // let updatedFriends = [];
-      // for(let friend of state.friends){
-      //   if(friend.id === action.payload.currentFriend.id) {
-      //      friend = {...friend, messages: [friend.messages, [action.payload.messages, 'me']]}
-      //   }
-      //   updatedFriends.push(friend)
-      // }
-
-      case actionTypes.LOAD_USER:
-        return {
-          ...state,
+    case actionTypes.LOAD_USER:
+      return {
+        ...state,
         currentFriend: action.payload,
       };
     default:
