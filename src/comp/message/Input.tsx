@@ -23,8 +23,7 @@ const Input: React.FunctionComponent<friendProps> = ({
   console.log(currentFriend);
 
   const postData = async () => {
-
-    sendMessage(currentFriend, message)
+    sendMessage(currentFriend, message);
 
     console.log(`Hello message is: ${message}`);
 
@@ -44,7 +43,6 @@ const Input: React.FunctionComponent<friendProps> = ({
       });
 
     setMessage('');
-    
   };
 
   return (
@@ -65,7 +63,8 @@ const Input: React.FunctionComponent<friendProps> = ({
 
 const mapStateToProps = (dispatch: any) => {
   return {
-    sendMessage: (currentFriend: any, message:any) => dispatch(sendMessage(currentFriend, message)),
+    sendMessage: (currentFriend: any, message: any) =>
+      dispatch(sendMessage(currentFriend, message)),
   };
 };
 
