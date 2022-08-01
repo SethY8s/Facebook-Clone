@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-// import axios from 'axios';
+import axios from 'axios';
 import { sendMessage } from '../../redux/users/user-actions';
 
 interface friendsType {
@@ -22,28 +22,30 @@ const Input: React.FunctionComponent<friendProps> = ({
 
   console.log(currentFriend);
 
-  // const postData = async () => {
-  //   console.log(`Hello ${user} message is: ${message}`);
+  const postData = async () => {
 
-  //   const data = {
-  //     user,
-  //     message,
-  //   };
+    sendMessage(currentFriend, message)
 
-  //   console.log(data);
+    console.log(`Hello message is: ${message}`);
 
-  //   axios
-  //     .post('http://localhost:4000/data', data)
-  //     .then(function (response) {
-  //       console.log(response);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
+    const data = {
+      message,
+    };
 
-  //   setMessage('');
-  //   setUser('');
-  // };
+    console.log(data);
+
+    axios
+      .post('http://localhost:4000/data', data)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    setMessage('');
+    
+  };
 
   return (
     <div>
@@ -56,7 +58,7 @@ const Input: React.FunctionComponent<friendProps> = ({
         type="text"
       />
       {/* <button onClick={() => postData()}>Send Me</button> */}
-      <button onClick={() => sendMessage(currentFriend, message)}>Send Me</button>
+      <button onClick={() => postData}>Send Me</button>
     </div>
   );
 };
