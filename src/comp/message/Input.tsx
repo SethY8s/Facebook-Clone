@@ -29,6 +29,7 @@ const Input: React.FunctionComponent<friendProps> = ({
 
     const data = {
       message,
+      user: 'me',
     };
 
     console.log(data);
@@ -51,12 +52,13 @@ const Input: React.FunctionComponent<friendProps> = ({
         onChange={(e) => {
           setMessage(e.target.value);
         }}
+        value={message}
         placeholder="message"
         // value={message}
         type="text"
       />
       {/* <button onClick={() => postData()}>Send Me</button> */}
-      <button onClick={() => postData}>Send Me</button>
+      <button onClick={() => postData()}>Send Me</button>
     </div>
   );
 };
