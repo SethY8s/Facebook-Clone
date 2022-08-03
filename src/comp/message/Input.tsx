@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { sendMessage } from '../../redux/users/user-actions';
@@ -58,7 +58,9 @@ const Input: React.FunctionComponent<friendProps> = ({
         type="text"
       />
       {/* <button onClick={() => postData()}>Send Me</button> */}
-      <button onClick={() => postData()}>Send Me</button>
+      <button disabled={!message} onClick={() => postData()}>
+        Send Me
+      </button>
     </div>
   );
 };
